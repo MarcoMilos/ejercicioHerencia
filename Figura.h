@@ -5,7 +5,7 @@
 #ifndef Figura_h
 #define Figura_h
 
-#include <vector>
+#include <list>
 #include <string>
 #include "Punto.cpp"
 
@@ -13,21 +13,23 @@ class Figura
 {
     // Declaramos los atributos privados
     std::string nombre;
-    std::vector<Punto> puntos;
+    std::list<Punto> puntos;
     int numPuntos;
     public:
         // Declaramos los constructores
         Figura();
-        Figura(std::string, std::vector<Punto>, int);
+        Figura(std::string, std::list<Punto>, int);
         ~Figura();
         // Metodo Getters
         std::string getnombre();
-        std::vector<Punto> getpuntos();
+        std::list<Punto> getpuntos();
         int getnumPuntos();
         // Metodo Setters
         void setNombre(std::string);
-        void setpuntos(std::vector<Punto>);
+        void setpuntos(std::list<Punto>);
         void setnumPuntos(int);
+        // Metodo de impresion
+        void printFigura();
 };
 
 #endif

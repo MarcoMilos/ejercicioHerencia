@@ -12,7 +12,7 @@ Figura::Figura()
     numPuntos = 0;
     
 }
-Figura::Figura(std::string nom, std::vector<Punto> pts, int num)
+Figura::Figura(std::string nom, std::list<Punto> pts, int num)
 {
     nombre = nom;
     puntos = pts;
@@ -27,7 +27,7 @@ std::string Figura::getnombre()
 {
     return nombre;
 }
-std::vector<Punto> Figura::getpuntos()
+std::list<Punto> Figura::getpuntos()
 {
     return puntos;
 }
@@ -41,7 +41,7 @@ void Figura::setNombre(std::string nom)
 {
     nombre = nom;
 }
-void Figura::setpuntos(std::vector<Punto> pts)
+void Figura::setpuntos(std::list<Punto> pts)
 {
     puntos = pts;
 }
@@ -50,3 +50,9 @@ void Figura::setnumPuntos(int num)
     numPuntos = num;
 }
 
+// Metodo de impresion
+void Figura::printFigura()
+{
+    std::cout << "nombre: " << nombre << std::endl;
+    std::cout << "puntos: " << numPuntos << std::endl;
+}
