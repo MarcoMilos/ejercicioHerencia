@@ -26,7 +26,6 @@ class Figura
         int getnumPuntos();
         // Metodo Setters
         void setNombre(std::string);
-        void setpuntos(std::list<Punto>);
         void setnumPuntos(int);
         // Metodo de impresion
         void printFigura();
