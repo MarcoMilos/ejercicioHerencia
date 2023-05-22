@@ -4,10 +4,13 @@
 
 #include <iostream>
 #include "Punto.cpp"
+#include "Figura.cpp"
 
 int main()
 {
     Punto p1;
     p1.printPunto();
+    Figura f1;
+    f1.printFigura();
     return 0;
 }
