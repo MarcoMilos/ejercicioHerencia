@@ -3,6 +3,7 @@
 // Herencia y Otros Conceptos POO
 
 #include <iostream>
+#include <algorithm>
 #include "Figura.h"
 
 // Constructores por omisión y copia
@@ -53,6 +54,8 @@ void Figura::setnumPuntos(int num)
 // Metodo de impresion
 void Figura::printFigura()
 {
-    std::cout << "nombre: " << nombre << std::endl;
-    std::cout << "puntos: " << numPuntos << std::endl;
+    std::cout << "Nombre de la figura: " << nombre << std::endl;
+    std::cout << "Numero de Puntos: " << numPuntos << std::endl;
+    std::cout << "Puntos (ordenados por coordenada x, descendente)" << std::endl;
+    
 }
