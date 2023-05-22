@@ -42,10 +42,6 @@ void Figura::setNombre(std::string nom)
 {
     nombre = nom;
 }
-void Figura::setpuntos(std::list<Punto> pts)
-{
-    puntos = pts;
-}
 void Figura::setnumPuntos(int num)
 {
     numPuntos = num;
