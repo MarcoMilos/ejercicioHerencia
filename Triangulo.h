@@ -6,6 +6,7 @@
 #define Triangulo_h
 
 #include "Figura.h"
+#include "Punto.h"
 
 class Triangulo : public Figura
 {

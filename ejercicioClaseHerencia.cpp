@@ -5,6 +5,7 @@
 #include <iostream>
 #include "Punto.cpp"
 #include "Figura.cpp"
+#include "Triangulo.cpp"
 
 int main()
 {
@@ -12,5 +13,7 @@ int main()
     p1.printPunto();
     Figura f1;
     f1.printFigura();
+    Triangulo t1;
+    t1.printTriangulo();
     return 0;
 }
