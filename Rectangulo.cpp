@@ -3,6 +3,7 @@
 // Herencia y Otros Conceptos POO
 
 #include <iostream>
+#include <ostream>
 #include <cmath>
 #include <list>
 #include "Rectangulo.h"
@@ -38,13 +39,17 @@ double Rectangulo::calculaPerimetro()
 
     // Calculamos las distancias de los lados del rectángulo
     auto it = puntos.begin();
+    auto it2 = it;
+    ++it2;
+    auto it3 = it2;
+    ++it3;
+    auto it4 = it3;
+    ++it4;
+
     Punto& punto1 = *it;
-    ++it;
-    Punto& punto2 = *it;
-    ++it;
-    Punto& punto3 = *it;
-    ++it;
-    Punto& punto4 = *it;
+    Punto& punto2 = *it2;
+    Punto& punto3 = *it3;
+    Punto& punto4 = *it4;
 
     double lado1 = std::sqrt(pow(punto2.getx() - punto1.getx(), 2) + pow(punto2.gety() - punto1.gety(), 2));
     double lado2 = std::sqrt(pow(punto3.getx() - punto2.getx(), 2) + pow(punto3.gety() - punto2.gety(), 2));
@@ -65,15 +70,18 @@ double Rectangulo::calculaArea()
 
     // Calculamos la base y la altura de nuestro rectángulo
     auto it = puntos.begin();
+    auto it2 = it;
+    ++it2;
+    auto it3 = it2;
+    ++it3;
+
     Punto& punto1 = *it;
-    ++it;
-    Punto& punto2 = *it;
-    ++it;
-    Punto& punto3 = *it;
+    Punto& punto2 = *it2;
+    Punto& punto3 = *it3;
 
     double base = std::sqrt(pow(punto2.getx() - punto1.getx(), 2) + pow(punto2.gety() - punto1.gety(), 2));
     double altura = std::sqrt(pow(punto3.getx() - punto2.getx(), 2) + pow(punto3.gety() - punto2.gety(), 2));
-
+    
     return base * altura;
 }
 
@@ -81,26 +89,26 @@ void Rectangulo::printRectangulo()
 {
     Figura::printFigura();
     std::cout << "Nombre del rectángulo: " << getnombre() << std::endl;
-    std::cout << "Perímetro: " << calculaPerimetro << std::endl;
-    std::cout << "Área: " << calculaArea << std::endl;
+    std::cout << "Perímetro: " << calculaPerimetro() << std::endl;
+    std::cout << "Área: " << calculaArea() << std::endl;
 }
 
 void Rectangulo::setListaPuntos(std::list<Punto>& puntos)
 {
-    setListaPuntos(puntos);
+    Figura::setPuntos(puntos);
 }
 
 void Rectangulo::setNombreRectangulo(std::string& nombreRectangulo)
 {
-    setNombreRectangulo(nombreRectangulo);
+    Figura::setNombre(nombreRectangulo);
 }
 
 std::list<Punto> Rectangulo::getListaPuntos()
 {
-    return getListaPuntos();
+    return Figura::getpuntos();
 }
 
 std::string Rectangulo::getNombreRectangulo()
 {
-    return getNombreRectangulo();
+    return Figura::getnombre();
 }
