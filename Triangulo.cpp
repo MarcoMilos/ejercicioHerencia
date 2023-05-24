@@ -35,14 +35,17 @@ double Triangulo::calcularPerimetro()
         std::cerr << "Error: El número de puntos del triángulo no es válido." << std::endl;
         return 0.0;
     }
-
+  
     // Calculamos la distancia entre los puntos proporcionados
     auto it = puntos.begin();
+    auto it2 = it;
+    ++it2;
+    auto it3 = it2;
+    ++it3;
+
     Punto& punto1 = *it;
-    ++it;
-    Punto& punto2 = *it;
-    ++it;
-    Punto& punto3 = *it;
+    Punto& punto2 = *it2;
+    Punto& punto3 = *it3;
 
     double lado1 = std::sqrt(pow(punto2.getx() - punto1.getx(), 2) + pow(punto2.gety() - punto1.gety(), 2));
     double lado2 = std::sqrt(pow(punto3.getx() - punto2.getx(), 2) + pow(punto3.gety() - punto2.gety(), 2));
@@ -60,13 +63,16 @@ double Triangulo::calcularArea()
         return 0.0;
     }
 
-    // Calculamos el área haciendo uso de la fórmula de Herón
+    // // // Calculamos el área haciendo uso de la fórmula de Herón
     auto it = puntos.begin();
+    auto it2 = it;
+    ++it2;
+    auto it3 = it2;
+    ++it3;
+
     Punto& punto1 = *it;
-    ++it;
-    Punto& punto2 = *it;
-    ++it;
-    Punto& punto3 = *it;
+    Punto& punto2 = *it2;
+    Punto& punto3 = *it3;
 
     double lado1 = std::sqrt(pow(punto2.getx() - punto1.getx(), 2) + pow(punto2.gety() - punto1.gety(), 2));
     double lado2 = std::sqrt(pow(punto3.getx() - punto2.getx(), 2) + pow(punto3.gety() - punto2.gety(), 2));
@@ -79,27 +85,27 @@ double Triangulo::calcularArea()
 void Triangulo::printTriangulo()
 {
     Figura::printFigura();
-    std::cout << "Tipo de Figura: Triángulo" << std::endl;
+    std::cout << "Nombre del Triangulo: " << getnombre() << std::endl;
     std::cout << "Perímetro: " << calcularPerimetro() << std::endl;
     std::cout << "Área: " << calcularArea() << std::endl;
 }
 
 void Triangulo::setListaPuntos(std::list<Punto>& puntos)
 {
-    setListaPuntos(puntos);
+    Figura::setPuntos(puntos);
 }
 
 void Triangulo::setNombreTriangulo(std::string& nombreTriangulo)
 {
-    setNombreTriangulo(nombreTriangulo);
+    Figura::setNombre(nombreTriangulo);
 }
 
 std::list<Punto> Triangulo::getListaPuntos()
 {
-    return getListaPuntos();
+    return Figura::getpuntos();
 }
 
 std::string Triangulo::getNombreTriangulo()
 {
-    return getNombreTriangulo();
+    return Figura::getnombre();
 }
