@@ -9,8 +9,25 @@
 // Constructores por omisión y copia
 Figura::Figura()
 {
-    nombre = "";
-    numPuntos = 0;
+    std::cout << "Ingrese el nombre de la figura: ";
+    std::cin >> nombre;
+
+    std::cout << "Ingrese el numero de puntos: ";
+    std::cin >> numPuntos;
+
+    // Solicitar los puntos al usuario
+    for (int i = 0; i < numPuntos; i++)
+    {
+        double x, y;
+        std::cout << "Ingrese las coordenadas x e y del punto: " << i + 1 << ": ";
+        std::cin >> x >> y;
+
+        // Crea un objeto punto con las coordenadas proporcionadas
+        Punto punto(x, y);
+
+        // Agregar el punto a la lista de puntos
+        puntos.push_back(punto);
+    } 
     
 }
 Figura::Figura(std::string nom, std::list<Punto> pts, int num)
@@ -42,6 +59,10 @@ void Figura::setNombre(std::string nom)
 {
     nombre = nom;
 }
+void Figura::setPuntos(std::list<Punto> pts)
+{
+    puntos = pts;
+}
 void Figura::setnumPuntos(int num)
 {
     numPuntos = num;
@@ -54,9 +75,9 @@ void Figura::printFigura()
     std::cout << "Numero de Puntos: " << numPuntos << std::endl;
     std::cout << "Puntos (ordenados por coordenada x, descendente)" << std::endl;
     std::list<Punto> puntosOrdenados(puntos);
-    std::sort(puntosOrdenados.begin(), puntosOrdenados.end(), [](Punto& p1, Punto& p2) { return p1.getx() > p2.getx(); });
+    puntosOrdenados.sort([](Punto& p1, Punto& p2) { return p1.getx() > p2.getx(); });
 
-    for (Punto& punto : puntosOrdenados)
+    for (auto punto : puntosOrdenados)
     {
         std::cout << "x: " << punto.getx() << ", y: " << punto.gety() << std::endl;
     }
