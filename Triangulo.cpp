@@ -21,7 +21,7 @@ Triangulo::Triangulo(std::list<Punto>& puntos, std::string& nombreTriangulo) : F
     }
 }
 
-// Hacemos la el constructor de copia
+// Hacemos el constructor de copia
 Triangulo::Triangulo(Triangulo& otroTriangulo) : Figura(otroTriangulo) {}
 
 // Establecemos el destructor
