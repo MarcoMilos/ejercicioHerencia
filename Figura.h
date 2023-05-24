@@ -19,6 +19,7 @@ class Figura
         // Declaramos los constructores
         Figura();
         Figura(std::string, std::list<Punto>, int);
+        Figura(std::string& nom);
         ~Figura();
         // Metodo Getters
         std::string getnombre();
@@ -28,6 +29,7 @@ class Figura
         void setNombre(std::string);
         void setPuntos(std::list<Punto>);
         void setnumPuntos(int);
+        void setListaPuntos(std::list<Punto>& listaPuntos);
         // Metodo de impresion
         void printFigura();
 };

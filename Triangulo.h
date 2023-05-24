@@ -5,6 +5,7 @@
 #ifndef Triangulo_h
 #define Triangulo_h
 
+#include <list>
 #include "Figura.h"
 #include "Punto.h"
 

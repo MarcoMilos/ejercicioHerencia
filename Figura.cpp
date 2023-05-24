@@ -36,6 +36,11 @@ Figura::Figura(std::string nom, std::list<Punto> pts, int num)
     puntos = pts;
     numPuntos = num;
 }
+Figura::Figura(std::string& nom)
+{
+    nombre = nom;
+    numPuntos = 0;
+}
 
 // Destructor 
 Figura::~Figura(){}
@@ -66,6 +71,11 @@ void Figura::setPuntos(std::list<Punto> pts)
 void Figura::setnumPuntos(int num)
 {
     numPuntos = num;
+}
+void Figura::setListaPuntos(std::list<Punto>& listaPuntos)
+{
+    puntos = listaPuntos;
+    numPuntos = puntos.size();
 }
 
 // Metodo de impresion
